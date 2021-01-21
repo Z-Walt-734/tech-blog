@@ -16,10 +16,8 @@ const styles = makeStyles((theme) => createStyles({
   },
 }));
 
-
 const HideOnScroll = (props) => {
   const {children, window} = props;
-
 
   const trigger = useScrollTrigger({
     target: window ? window() : undefined,
