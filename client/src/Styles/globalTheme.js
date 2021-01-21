@@ -8,13 +8,25 @@ const globalTheme = createMuiTheme({
     secondary: {
       main: '#882832',
     },
+    background: {
+      default: '#181a1b',
+    },
+
   },
   spacing: 8,
   typography: {
+
     fontFamily: [
       'Roboto',
       'Arial',
     ].join(','),
+    allVariants: {
+      color: 'white',
+    },
+    h3: {
+      color: 'gray',
+      fontWeight: '200',
+    },
   },
 });
 

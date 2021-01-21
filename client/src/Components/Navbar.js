@@ -6,7 +6,8 @@ import {AppBar,
   ListItem,
   ListItemText,
   Container,
-  Fab} from '@material-ui/core';
+  Fab,
+  Hidden} from '@material-ui/core';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 
 import globalStyle from '../Styles/globalStyle';
@@ -27,20 +28,24 @@ const Navbar = (props) => {
               <Link to='/'>
                 <img src={logoTrans} alt="Logo" className={classes.logo} />
               </Link>
-              <List
-                component='nav'
-                aria-labelledby='main navigation'
-                className={classes.navDisplayFlex}
-              >
-                {Navlinks.map(({title, path, component}) => (
-                  <Link to={path} key={title} className={classes.linkText}>
-                    <ListItem button>
-                      <ListItemText primary={title} />
-                    </ListItem>
-                  </Link>
-                ))}
-              </List>
-              <DropMenu />
+              <Hidden smDown>
+                <List
+                  component='nav'
+                  aria-labelledby='main navigation'
+                  className={classes.navDisplayFlex}
+                >
+                  {Navlinks.map(({title, path, component}) => (
+                    <Link to={path} key={title} className={classes.linkText}>
+                      <ListItem button>
+                        <ListItemText primary={title} />
+                      </ListItem>
+                    </Link>
+                  ))}
+                </List>
+              </Hidden>
+              <Hidden mdUp>
+                <DropMenu Navlinks={Navlinks} />
+              </Hidden>
             </Container>
           </Toolbar>
         </AppBar>

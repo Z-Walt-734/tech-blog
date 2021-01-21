@@ -1,23 +1,24 @@
-import React, {useState, useEffect} from 'react'
-import axios from 'axios'
-import './App.css';
-
-const App = props => {
-	useEffect(() => {
-		axios.get('api/test').then(res => setState(res.data))
-	}, [])
-
-	const [state, setState] = useState("");
-
-	return(
-		<div>
-			Home
-			This is a test
-			<p>{state}</p>
-		</div>
-	)
+import React from 'react';
+import {BrowserRouter as Router} from 'react-router-dom';
+import {MuiThemeProvider} from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 
-}
+import {Routes} from './Components';
+import globalTheme from './Styles/globalTheme';
+
+const App = () => {
+  return (
+    <>
+      <MuiThemeProvider theme={globalTheme}>
+        <CssBaseline />
+        <Router>
+          <Routes />
+        </Router>
+      </MuiThemeProvider>
+    </>
+  );
+};
 
 export default App;
+

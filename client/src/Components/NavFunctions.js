@@ -1,20 +1,16 @@
 import React from 'react';
+import {useState} from 'react';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Slide from '@material-ui/core/Slide';
 import Zoom from '@material-ui/core/Zoom';
-import {makeStyles, createStyles} from '@material-ui/core/styles';
+import {Link} from 'react-router-dom';
+import {List, ListItem, ListItemText, Drawer} from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import PropTypes from 'prop-types';
 
-// TODO Move this junk to the Styles dir
-const styles = makeStyles((theme) => createStyles({
-  backToTop: {
-    position: 'fixed',
-    bottom: theme.spacing(2),
-    right: theme.spacing(2),
-  },
-}));
+import globalStyle from '../Styles/globalStyle';
+
 
 const HideOnScroll = (props) => {
   const {children, window} = props;
@@ -36,7 +32,7 @@ HideOnScroll.propTypes = {
 };
 
 const ScrollToTop = (props) => {
-  const style = styles();
+  const style = globalStyle();
   const {children, window} = props;
   const trigger = useScrollTrigger({
     target: window ? window() : undefined,
@@ -72,14 +68,64 @@ ScrollToTop.propTypes = {
 };
 
 
-const DropMenu = () => {
+const DropMenu = ({Navlinks}) => {
+  const style = globalStyle();
+  const [state, setState] = useState({right: false});
+
+  const toggleMenu = (anchor, open) => (event) => {
+    if (event.type === 'keydown' &&
+        (event.key === 'Tab' ||
+        event.key === 'Shift')
+    ) {
+      return;
+    }
+    setState({[anchor]: open});
+  };
+
+  const dropMenuList = (anchor) => (
+    <div
+      role='presentation'
+      onClick={toggleMenu(anchor, false)}
+      onKeyDown={toggleMenu(anchor, false)}
+    >
+      <List component='nav'>
+        {Navlinks.map(({title, path, component}) => (
+          <Link to={path} key={title} className={style.linkText}>
+            <ListItem button>
+              <ListItemText primary={title} />
+            </ListItem>
+          </Link>
+        ))}
+      </List>
+    </div>
+  );
+
   return (
     <>
-      <IconButton color='secondary' edge='start' aria-label='menu'>
+      <IconButton
+        color='secondary'
+        edge='start'
+        aria-label='menu'
+        onClick={toggleMenu('right', true)}
+      >
         <MenuIcon />
       </IconButton>
+      <Drawer
+        classes = {{paper: style.list}}
+        anchor='right'
+        open={state.right}
+        onOpen={toggleMenu('right', true)}
+        onClose={toggleMenu('right', false)}
+
+      >
+        {dropMenuList('right')}
+      </Drawer>
     </>
   );
+};
+
+DropMenu.propTypes = {
+  Navlinks: PropTypes.array.isRequired,
 };
 
 export {
