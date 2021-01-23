@@ -25,7 +25,17 @@ const globalTheme = createMuiTheme({
     },
     h3: {
       color: 'gray',
-      fontWeight: '200',
+      fontFamily: 'Helvetica Neue',
+      fontSize: '42px',
+      fontWeight: '100',
+    },
+    body1: {
+      color: 'white',
+      fontSize: '21px',
+    },
+    body2: {
+      color: 'white',
+      fontSize: '18px',
     },
   },
 });
