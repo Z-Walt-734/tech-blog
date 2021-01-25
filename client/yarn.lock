@@ -7484,6 +7484,11 @@
   dependencies:
     "object-visit" "^1.0.0"
 
+"material-down@^2.0.0":
+  "integrity" "sha512-bz5WIhCwZcLP9gTIx4OyB5s59SsAm/b8uA8MQQeTZTGUPCC05x9hsnz+WsijFmMyT96kSXJtGEwn2+jzYGWYuQ=="
+  "resolved" "https://registry.npmjs.org/material-down/-/material-down-2.0.0.tgz"
+  "version" "2.0.0"
+
 "md5.js@^1.3.4":
   "integrity" "sha512-xitP+WxNPcTTOgnTJcrhM0xvdPepipPSf3I8EIpGKeFLjt3PlJLIDG3u8EX53ZIubkb+5U2+3rELYpEhHhzdkg=="
   "resolved" "https://registry.yarnpkg.com/md5.js/-/md5.js-1.3.5.tgz"

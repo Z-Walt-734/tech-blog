@@ -42,7 +42,7 @@ const ScrollToTop = (props) => {
 
   const handleClick = (event) => {
     const anchor = (event.target.ownerDocument || document)
-        .querySelector('#back-to-top-anchor');
+      .querySelector('#back-to-top-anchor');
 
     if (anchor) {
       anchor.scrollIntoView({behavior: 'smooth', block: 'center'});
@@ -114,7 +114,6 @@ const DropMenu = ({Navlinks}) => {
         classes = {{paper: style.list}}
         anchor='right'
         open={state.right}
-        onOpen={toggleMenu('right', true)}
         onClose={toggleMenu('right', false)}
 
       >

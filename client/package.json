@@ -11,6 +11,7 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
     "fontsource-roboto": "^4.0.0",
+    "material-down": "^2.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
@@ -18,9 +19,9 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "python3 build.py && react-scripts start",
+    "build": "python3 build.py && react-scripts build",
+    "test": "rpython3 build.py && eact-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

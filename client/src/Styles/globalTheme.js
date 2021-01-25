@@ -15,7 +15,6 @@ const globalTheme = createMuiTheme({
   },
   spacing: 8,
   typography: {
-
     fontFamily: [
       'Roboto',
       'Arial',
@@ -23,15 +22,24 @@ const globalTheme = createMuiTheme({
     allVariants: {
       color: 'white',
     },
+    h1: {
+      fontSize: '36px',
+    },
+    h2: {
+      fontSize: '34px',
+    },
     h3: {
       color: 'gray',
       fontFamily: 'Helvetica Neue',
-      fontSize: '42px',
+      fontSize: '32px',
       fontWeight: '100',
+    },
+    h4: {
+      fontSize: '28px',
     },
     body1: {
       color: 'white',
-      fontSize: '21px',
+      fontSize: '18px',
     },
     body2: {
       color: 'white',
