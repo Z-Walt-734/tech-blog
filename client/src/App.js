@@ -4,6 +4,7 @@ import {MuiThemeProvider} from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 
+import './Styles/global.css';
 import {Routes} from './Components';
 import globalTheme from './Styles/globalTheme';
 

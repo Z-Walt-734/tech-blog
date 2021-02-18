@@ -21,7 +21,7 @@ const Navbar = (props) => {
   return (
     <>
       <div className={classes.offset} />
-      <HideOnScroll { ...props }>
+      <HideOnScroll {...props}>
         <AppBar className={classes.toolbar}>
           <Toolbar>
             <Container className={classes.navDisplayFlex}>

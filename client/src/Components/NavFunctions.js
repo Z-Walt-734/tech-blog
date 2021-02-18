@@ -31,6 +31,7 @@ HideOnScroll.propTypes = {
   window: PropTypes.instanceOf(window.constructor),
 };
 
+
 const ScrollToTop = (props) => {
   const style = globalStyle();
   const {children, window} = props;
@@ -126,6 +127,7 @@ const DropMenu = ({Navlinks}) => {
 DropMenu.propTypes = {
   Navlinks: PropTypes.array.isRequired,
 };
+
 
 export {
   HideOnScroll,

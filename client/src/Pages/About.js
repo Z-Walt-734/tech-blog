@@ -1,11 +1,16 @@
 import React from 'react';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
-
+import MaterialDown from 'material-down';
 
 const About = () => {
+  const data = 'This is some data';
   return (
     <>
+
+      <MaterialDown>
+        {data}
+      </MaterialDown>
       <Container>
         <Typography variant="h1" gutterBottom>About The Coder</Typography>
         <Typography variant="h3" gutterBottom>Or: How I learned to stop worrying
